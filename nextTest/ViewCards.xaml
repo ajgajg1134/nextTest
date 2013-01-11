@@ -27,16 +27,17 @@
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            <TextBlock x:Name="cardTitle" HorizontalAlignment="Left" Height="35" Margin="145,270,0,0" VerticalAlignment="Top" Width="150" Text="Card Number 1"/>
-            <Border Width="300" Height="100" Margin="80,300,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="White" BorderThickness="3"/>
-            <TextBlock x:Name="cardBox" HorizontalAlignment="Left" Height="100" Margin="80,300,0,0" TextWrapping="Wrap" FontSize="25" TextAlignment="Center" Text="" VerticalAlignment="Top" Width="300"/>
-            <Button x:Name="flipBtn" Content="Flip Card" HorizontalAlignment="Left" Height="75" Margin="124,428,0,0" VerticalAlignment="Top" Width="200" IsEnabled="False" Click="flipCardBtn_Click"/>
-            <Button x:Name="nextBtn" Content="Next" HorizontalAlignment="Left" Margin="324,428,0,0" VerticalAlignment="Top" Height="75" IsEnabled="False" Click="nextBtn_Click"/>
-            <Button x:Name="prevBtn" Content="Prev" HorizontalAlignment="Left" Margin="23,428,0,0" VerticalAlignment="Top" Height="75" IsEnabled="False" Click="prevBtn_Click"/>
-            <Button x:Name="removeBtn" Content="Remove" HorizontalAlignment="Left" Margin="124, 495, 0, 0" VerticalAlignment="Top" Width="200" Height="75" IsEnabled="False" Click="removeBtn_Click"/>
-            <Button Content="Add More Cards" HorizontalAlignment="Left" Margin="107,10,0,0" VerticalAlignment="Top" Click="addMoreBtn_Click"/>
-            <Button Content="Load Cards" HorizontalAlignment="Left" Margin="18,87,0,0" VerticalAlignment="Top" Width="428" Click="loadCardsBtn_Click"/>
-            <Button x:Name="saveBtn" Content="Save Cards" HorizontalAlignment="Left" Margin="18,159,0,0" VerticalAlignment="Top" Width="428" Click="saveCardsBtn_Click"/>
+            <TextBlock x:Name="cardTitle" HorizontalAlignment="Left" Height="35" Margin="154,-25,0,0" VerticalAlignment="Top" Width="150" Text="Card Number 1"/>
+            <Border Width="435" Height="195" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="White" BorderThickness="3">
+                <TextBlock x:Name="cardBox" HorizontalAlignment="Left" Height="192" Margin="-3,0,-3,-3" TextWrapping="Wrap" FontSize="30" TextAlignment="Center" Text="" VerticalAlignment="Top" Width="435"/>
+            </Border>
+            <Button x:Name="flipBtn" Content="Flip Card" HorizontalAlignment="Left" Height="75" Margin="124,221,0,0" VerticalAlignment="Top" Width="200" IsEnabled="False" Click="flipCardBtn_Click"/>
+            <Button x:Name="nextBtn" Content="Next" HorizontalAlignment="Left" Margin="341,221,0,0" VerticalAlignment="Top" Height="75" IsEnabled="False" Click="nextBtn_Click"/>
+            <Button x:Name="prevBtn" Content="Prev" HorizontalAlignment="Left" Margin="10,221,0,0" VerticalAlignment="Top" Height="75" IsEnabled="False" Click="prevBtn_Click"/>
+            <Button x:Name="removeBtn" Content="Remove" HorizontalAlignment="Left" Margin="124,311,0,0" VerticalAlignment="Top" Width="200" Height="75" IsEnabled="False" Click="removeBtn_Click"/>
+            <Button Content="Add More Cards" HorizontalAlignment="Left" Margin="105,598,0,0" VerticalAlignment="Top" Click="addMoreBtn_Click"/>
+            <Button Content="Load Cards" HorizontalAlignment="Left" Margin="10,454,0,0" VerticalAlignment="Top" Width="428" Click="loadCardsBtn_Click"/>
+            <Button x:Name="saveBtn" Content="Save Cards" HorizontalAlignment="Left" Margin="10,526,0,0" VerticalAlignment="Top" Width="428" Click="saveCardsBtn_Click"/>
             
         
         </Grid>
