@@ -1,0 +1,52 @@
+﻿<phone:PhoneApplicationPage
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls" 
+    xmlns:src="clr-namespace:nextTest"
+    x:Class="nextTest.MainPage"
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    shell:SystemTray.IsVisible="True">
+
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock x:Name="ApplicationTitle" Text="FlashCards Test!"  FontSize="24" Style="{StaticResource PhoneTextNormalStyle}"/>
+        </StackPanel>
+
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <TextBox x:Name="frontBox" HorizontalAlignment="Left" Height="75" Margin="18,10,0,0" TextWrapping="Wrap" Text="Front" VerticalAlignment="Top" Width="428" Tap="frontBox_Tap"/>
+            <TextBox x:Name="backBox" HorizontalAlignment="Left" Height="75" Margin="18,70,0,0" TextWrapping="Wrap" Text="Back" VerticalAlignment="Top" Width="428" Tap="backBox_Tap"/>
+            <Button Content="Make Card" HorizontalAlignment="Left" Height="79" Margin="18,129,0,0" VerticalAlignment="Top" Width="428" Click="mkCardBtn_Click"/>
+            <Button Content="View Cards" HorizontalAlignment="Left" Margin="18,208,0,0" VerticalAlignment="Top" Width="428" Click="viewCardsBtn_Click"/>
+            <Button Content="Load Cards" HorizontalAlignment="Left" Margin="18,280,0,0" VerticalAlignment="Top" Width="428" Click="loadCardsBtn_Click"/>
+        </Grid>
+
+        <!--<Grid>
+            <Grid.Resources>
+                <src:FileList  x:Key="FileList"/>
+            </Grid.Resources>
+            <ListBox ItemsSource="{StaticResource FileList}" Width="250" Margin="109,541,121,-526"/>
+        </Grid>--> 
+        
+       
+        
+        
+
+
+
+    </Grid>
+
+</phone:PhoneApplicationPage>
