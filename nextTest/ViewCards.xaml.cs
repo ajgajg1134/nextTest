@@ -180,5 +180,10 @@ namespace nextTest
         {
             NavigationService.Navigate(new Uri("/LoadCards.xaml", UriKind.Relative));
         }
+
+        private void studyModeBtn_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/ViewCardsLandscape.xaml", UriKind.Relative));
+        }
     }
 }
