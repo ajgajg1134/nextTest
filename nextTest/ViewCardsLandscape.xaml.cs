@@ -17,6 +17,7 @@ namespace nextTest
         bool isFrontFacing = true;
         bool incOK = false;
         bool decOK = false;
+        bool empty = true;
 
         public ViewCardsLandscape()
         {
@@ -29,15 +30,18 @@ namespace nextTest
 
         private void card_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
-            if (isFrontFacing)
+            if (Controller.getIndex() >= 0)
             {
-                this.cardBox.Text = Controller.getBack();
-                isFrontFacing = false;
-            }
-            else
-            {
-                this.cardBox.Text = Controller.getFront();
-                isFrontFacing = true;
+                if (isFrontFacing)
+                {
+                    this.cardBox.Text = Controller.getBack();
+                    isFrontFacing = false;
+                }
+                else
+                {
+                    this.cardBox.Text = Controller.getFront();
+                    isFrontFacing = true;
+                }
             }
         }
         protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
@@ -77,6 +81,11 @@ namespace nextTest
                 this.decOK = true;
             else
                 this.decOK = false;
+
+            //if (Controller.getIndex() < 0)
+            //    this.empty = false;
+            //else
+            //    this.empty = true;
         }
 
     }
