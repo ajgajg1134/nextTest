@@ -273,5 +273,29 @@ namespace nextTest
                 }
             }
         }
+        /// <summary>
+        /// Reorders the current open cards. 
+        /// </summary>
+        public static void shuffleCards()
+        {
+            List<String> newFront = new List<String>();
+            List<String> newBack = new List<String>();
+
+            Random rand = new Random();
+            int permLength = fronts.Count;
+
+            while (newFront.Count < permLength)
+            {
+                int randNum = rand.Next(0, fronts.Count);
+                newFront.Add(fronts.ElementAt(randNum));
+                newBack.Add(backs.ElementAt(randNum));
+                fronts.RemoveAt(randNum);
+                backs.RemoveAt(randNum);
+            }
+            fronts = newFront;
+            backs = newBack;
+        }
+
+
     }
 }

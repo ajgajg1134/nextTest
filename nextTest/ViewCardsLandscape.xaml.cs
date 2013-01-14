@@ -17,7 +17,7 @@ namespace nextTest
         bool isFrontFacing = true;
         bool incOK = false;
         bool decOK = false;
-        bool empty = true;
+        //bool empty = true;
 
         public ViewCardsLandscape()
         {

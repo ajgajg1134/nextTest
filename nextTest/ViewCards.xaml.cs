@@ -38,12 +38,14 @@ namespace nextTest
                 this.removeBtn.IsEnabled = false;
                 this.flipBtn.IsEnabled = false;
                 this.saveBtn.IsEnabled = false;
+                this.shuffleBtn.IsEnabled = false;
             }
             else
             {
                 this.removeBtn.IsEnabled = true;
                 this.flipBtn.IsEnabled = true;
                 this.saveBtn.IsEnabled = true;
+                this.shuffleBtn.IsEnabled = true;
             }
         }
         protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
@@ -158,6 +160,22 @@ namespace nextTest
             p.HorizontalOffset = 50;
             
         }
+        private void card_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            if (Controller.getIndex() >= 0)
+            {
+                if (isFrontFacing)
+                {
+                    this.cardBox.Text = Controller.getBack();
+                    isFrontFacing = false;
+                }
+                else
+                {
+                    this.cardBox.Text = Controller.getFront();
+                    isFrontFacing = true;
+                }
+            }
+        }
         private void fileName_Tap(object sender, EventArgs e)
         {
             fileNameInput.Text = "";
@@ -184,6 +202,17 @@ namespace nextTest
         private void studyModeBtn_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new Uri("/ViewCardsLandscape.xaml", UriKind.Relative));
+        }
+
+        private void shuffleBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Controller.shuffleCards();
+            checkIndex();
+            if (Controller.getIndex() >= 0)
+            {
+                this.cardBox.Text = Controller.getFront();
+            }
+            
         }
     }
 }
