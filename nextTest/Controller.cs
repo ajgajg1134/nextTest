@@ -218,6 +218,9 @@ namespace nextTest
 
             List<String> files = new List<String>();
 
+            if (!local.DirectoryExists("DataFolder"))
+                local.CreateDirectory("DataFolder");
+
             // Specify the file path and options.
             using (var isoFileStream =
                     new System.IO.IsolatedStorage.IsolatedStorageFileStream
