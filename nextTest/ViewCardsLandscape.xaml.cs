@@ -19,9 +19,19 @@ namespace nextTest
         bool decOK = false;
         //bool empty = true;
 
+        private TranslateTransform translation;
+        private TransformGroup transformGroup;
+
         public ViewCardsLandscape()
         {
             InitializeComponent();
+
+            this.transformGroup = new TransformGroup();
+            this.translation = new TranslateTransform();
+
+            this.transformGroup.Children.Add(this.translation);
+            this.cardBox.RenderTransform = this.transformGroup;
+
             this.ManipulationCompleted +=
                 this.ViewCardsLandscape_ManipulationCompleted;
             this.Tap +=
@@ -55,12 +65,21 @@ namespace nextTest
         }
         void ViewCardsLandscape_ManipulationCompleted(object sender, ManipulationCompletedEventArgs e)
         {
-            if (e.TotalManipulation.Translation.X < -5 && incOK)
+            if (e.TotalManipulation.Translation.X < -5)
             {
                 //Goes to the right
-                Controller.incIndex();
-                this.cardBox.Text = Controller.getFront();
-                checkIndex();
+                if (incOK)
+                {
+                    Controller.incIndex();
+                    this.cardBox.Text = Controller.getFront();
+                    checkIndex();
+                }
+                else
+                {
+                    Controller.setIndex(0);
+                    this.cardBox.Text = Controller.getFront();
+                    checkIndex();
+                }
             }
             else if (e.TotalManipulation.Translation.X > 5 && decOK)
             {

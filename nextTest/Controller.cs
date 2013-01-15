@@ -289,8 +289,7 @@ namespace nextTest
                 int randNum = rand.Next(0, fronts.Count);
                 newFront.Add(fronts.ElementAt(randNum));
                 newBack.Add(backs.ElementAt(randNum));
-                fronts.RemoveAt(randNum);
-                backs.RemoveAt(randNum);
+                Controller.removeAt(randNum);
             }
             fronts = newFront;
             backs = newBack;
