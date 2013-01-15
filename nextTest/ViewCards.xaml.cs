@@ -56,6 +56,7 @@ namespace nextTest
             {
                 this.cardBox.Text = Controller.getFront();
             }
+            this.invertBox.IsChecked = Controller.getIsInverted();
         }
         private void flipCardBtn_Click(object sender, RoutedEventArgs e)
         {
@@ -212,7 +213,15 @@ namespace nextTest
             {
                 this.cardBox.Text = Controller.getFront();
             }
-            
+        }
+        private void CheckBox_Checked_1(object sender, RoutedEventArgs e)
+        {
+            Controller.invertCards();
+            //checkIndex();
+            if (Controller.getIndex() >= 0)
+            {
+                this.cardBox.Text = Controller.getFront();
+            }
         }
     }
 }

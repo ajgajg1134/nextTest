@@ -17,7 +17,6 @@ namespace nextTest
         bool isFrontFacing = true;
         bool incOK = false;
         bool decOK = false;
-        //bool empty = true;
 
         private TranslateTransform translation;
         private TransformGroup transformGroup;

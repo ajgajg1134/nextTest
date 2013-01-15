@@ -11,11 +11,12 @@ namespace nextTest
         static List<String> fronts = new List<String>();
         static List<String> backs = new List<String>();
 
+        static bool isInverted = false;
+
         static int currentIndex = -1;
         
         public Controller()
         {
-
         }
 
         public static void add(String s1, String s2)
@@ -49,6 +50,21 @@ namespace nextTest
             fronts.RemoveAt(currentIndex);
             backs.RemoveAt(currentIndex);
         }
+        /// <summary>
+        /// Switches front and back of cards
+        /// </summary>
+        public static void invertCards()
+        {
+            List<String> temp = new List<String>();
+            temp = fronts;
+            fronts = backs;
+            backs = temp;
+            isInverted = !isInverted;
+        }
+        public static bool getIsInverted()
+        {
+            return isInverted;
+        }
         public static int getLength()
         {
             return fronts.Count;
@@ -74,6 +90,11 @@ namespace nextTest
             fronts = new List<String>();
             backs = new List<String>();
         }
+        /// <summary>
+        /// Loads a previously recorded file given the location of the file.
+        /// Note that front and back of cards are split using a pipe '|'
+        /// </summary>
+        /// <param name="url">The name of the file NOT including .txt extension</param>
         public static void loadOld(String url)
         {
             System.IO.IsolatedStorage.IsolatedStorageFile local =
@@ -186,6 +207,10 @@ namespace nextTest
                 }
             }
         }
+        /// <summary>
+        /// Reads FileList.txt and makes a list of all files in the directory.
+        /// </summary>
+        /// <returns>A list of all the files in the directory, Without .txt extension</returns>
         public static List<String> getFileList()
         {
             System.IO.IsolatedStorage.IsolatedStorageFile local =
@@ -215,6 +240,9 @@ namespace nextTest
             
             return files;
         }
+        /// <summary>
+        /// Uses removeFile method to delete all files (NOT INCLUDING FileList.txt!)
+        /// </summary>
         public static void removeAllFiles()
         {
             List<string> files = getFileList();
@@ -294,7 +322,5 @@ namespace nextTest
             fronts = newFront;
             backs = newBack;
         }
-
-
     }
 }
