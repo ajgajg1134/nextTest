@@ -61,6 +61,7 @@ namespace nextTest
             if (Controller.getIndex() >= 0)
             {
                 this.cardBox.Text = Controller.getFront();
+                this.cardCounter.Text = "Card " + (Controller.getIndex() + 1) + "/" + Controller.getLength();
             }
         }
         void ViewCardsLandscape_ManipulationCompleted(object sender, ManipulationCompletedEventArgs e)
@@ -72,12 +73,14 @@ namespace nextTest
                 {
                     Controller.incIndex();
                     this.cardBox.Text = Controller.getFront();
+                    this.cardCounter.Text = "Card " + (Controller.getIndex() + 1) + "/" + Controller.getLength();
                     checkIndex();
                 }
                 else
                 {
                     Controller.setIndex(0);
                     this.cardBox.Text = Controller.getFront();
+                    this.cardCounter.Text = "Card " + (Controller.getIndex() + 1) + "/" + Controller.getLength();
                     checkIndex();
                 }
             }
@@ -86,6 +89,7 @@ namespace nextTest
                 //Goes to the left.
                 Controller.decIndex();
                 this.cardBox.Text = Controller.getFront();
+                this.cardCounter.Text = "Card " + (Controller.getIndex() + 1) + "/" + Controller.getLength();
                 checkIndex();
             }
         }

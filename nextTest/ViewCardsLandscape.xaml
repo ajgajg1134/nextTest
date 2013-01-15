@@ -27,6 +27,7 @@
                 
                 <TextBlock x:Name="cardBox" HorizontalAlignment="Left" MaxHeight="447" Margin="-3,0,0,0" TextWrapping="Wrap" FontSize="35" TextAlignment="Center" Text="" VerticalAlignment="Center" Width="684"/>
             </Border>
+            <TextBlock x:Name="cardCounter" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Card 0/0" FontSize="14" VerticalAlignment="Top" Width="262"/>
         </Grid>
     </Grid>
     
