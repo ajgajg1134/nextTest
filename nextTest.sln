@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Express 2012 for Windows Phone
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nextTest", "nextTest\nextTest.csproj", "{E1E09924-50C0-41A3-9EEE-49CD57B40A9A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlashcardsMadeEasy", "nextTest\FlashcardsMadeEasy.csproj", "{E1E09924-50C0-41A3-9EEE-49CD57B40A9A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
