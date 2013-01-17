@@ -8,6 +8,8 @@ namespace nextTest
 {
     class Controller
     {
+
+        static String title = ""
         static List<String> fronts = new List<String>();
         static List<String> backs = new List<String>();
 
@@ -23,6 +25,14 @@ namespace nextTest
         {
             fronts.Add(s1);
             backs.Add(s2);
+        }
+        public static String getTitle()
+        {
+            return title;
+        }
+        public static void getTitle(String s)
+        {
+            title = s;
         }
         public static String getFront(int index)
         {
@@ -100,6 +110,9 @@ namespace nextTest
             System.IO.IsolatedStorage.IsolatedStorageFile local =
                 System.IO.IsolatedStorage.IsolatedStorageFile.GetUserStoreForApplication();
 
+            fronts = new List<String>();
+            backs = new List<String>();
+
             // Specify the file path and options.
             using (var isoFileStream =
                     new System.IO.IsolatedStorage.IsolatedStorageFileStream
@@ -117,6 +130,7 @@ namespace nextTest
                     }
                 }
             }
+            title = url;
         }
         /// <summary>
         /// Writes the content of the open flashcards to a file called name.txt
@@ -146,6 +160,8 @@ namespace nextTest
                     updateFileList(name);
                 }
             }
+
+            title = name;
         }
         public static void updateFileList(String name)
         {

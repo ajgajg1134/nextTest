@@ -57,6 +57,7 @@ namespace nextTest
         {
             base.OnNavigatedTo(e);
             checkIndex();
+            this.cardTitle.Text = Controller.getTitle();
             if (Controller.getIndex() >= 0)
             {
                 this.cardBox.Text = Controller.getFront();
@@ -78,9 +79,14 @@ namespace nextTest
                 else
                 {
                     Controller.setIndex(0);
-                    this.cardBox.Text = Controller.getFront();
-                    this.cardCounter.Text = "Card " + (Controller.getIndex() + 1) + "/" + Controller.getLength();
                     checkIndex();
+                    //This part of the code allows for users to loop cards, but SHOULD prevent crashing when opening study mode with an empty list
+                    if (incOK)
+                    {
+                        this.cardBox.Text = Controller.getFront();
+                        this.cardCounter.Text = "Card " + (Controller.getIndex() + 1) + "/" + Controller.getLength();
+                        checkIndex();
+                    }
                 }
             }
             else if (e.TotalManipulation.Translation.X > 5 && decOK)
@@ -92,6 +98,9 @@ namespace nextTest
                 checkIndex();
             }
         }
+        /// <summary>
+        /// Changes incOK and decOK to true or false depending on Controller.getIndex()
+        /// </summary>
         public void checkIndex()
         {
             if (Controller.getIndex() + 1 < Controller.getLength())
