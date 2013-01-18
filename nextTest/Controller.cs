@@ -9,7 +9,7 @@ namespace nextTest
     class Controller
     {
 
-        static String title = ""
+        static String title = "";
         static List<String> fronts = new List<String>();
         static List<String> backs = new List<String>();
 

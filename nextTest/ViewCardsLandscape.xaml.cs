@@ -66,6 +66,10 @@ namespace nextTest
         }
         void ViewCardsLandscape_ManipulationCompleted(object sender, ManipulationCompletedEventArgs e)
         {
+            if (Controller.getLength() <= 0)
+            {
+                return;
+            }
             if (e.TotalManipulation.Translation.X < -5)
             {
                 //Goes to the right
@@ -112,6 +116,7 @@ namespace nextTest
                 this.decOK = true;
             else
                 this.decOK = false;
+
 
             //if (Controller.getIndex() < 0)
             //    this.empty = false;

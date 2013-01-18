@@ -32,7 +32,7 @@
             <Button Content="Make Card" HorizontalAlignment="Left" Height="79" Margin="18,129,0,0" VerticalAlignment="Top" Width="428" Click="mkCardBtn_Click"/>
             <Button Content="View Cards" HorizontalAlignment="Left" Margin="18,208,0,0" VerticalAlignment="Top" Width="428" Click="viewCardsBtn_Click"/>
             <Button Content="Load Cards" HorizontalAlignment="Left" Margin="18,280,0,0" VerticalAlignment="Top" Width="428" Click="loadCardsBtn_Click"/>
-            <TextBlock HorizontalAlignment="Left" Margin="90,660,0,0" TextWrapping="Wrap" Text="Created by: Andrew Glaude. Version 1.0" FontSize="16" VerticalAlignment="Top" Width="291"/>
+            <TextBlock HorizontalAlignment="Left" Margin="90,660,0,0" TextWrapping="Wrap" Text="Created by: Andrew Glaude. Version 1.1" FontSize="16" VerticalAlignment="Top" Width="291"/>
 
         </Grid>
 
